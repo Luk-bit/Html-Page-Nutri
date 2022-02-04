@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>Brasil Nutri Shop</title>
+    <link rel="icon" type="image/jpg" href="imagens/logo.jpg">
+    <link rel="stylesheet" type ="text/css" href="estilos/estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+            <nav id = "news">
+        <nav id = "cabe">
+            <a><h4 style="float: left" color = "white">Acompanhe nossas redes socias</h4></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="Imagens/face.png" ></a>
+              <a href="https://www.instagram.com/"target="_blank"><img src="Imagens/Insta.png"></a>
+              <a href="https://www.tiktok.com/pt-BR/" target="_blank"><img src="Imagens/tiktok.png"></a>
+              <a href="https://twitter.com/i/flow/login" target="_blank"><img src="Imagens/twitter.png"></a>
+                <p style="float: right">
+                <a href="index.html" target="_blank"> Cadastrar</a>
+                <a href="NossoTrabalho.html" target="_blank"> Entrar </a>
+                <a href="Contato.html"target="_blank"><img src="imagens/noti.png"></a>
+        </nav>  
+            <img src="imagens/logo.jpg"/>
+            <div id="divBusca" style="float:right">
+                <input type="text" id="txtBusca" placeholder="Buscar..."/>
+                <img style="float: right
+                " src="imagens/istockphoto-1173137813-170667a-removebg-preview.png"id="btnBusca" alt="Buscar"/>
+              </div>
+                    </nav>
+            </header>
+
+            <script src="jquery-3.6.0.min.js"></script>
+            <div class="div-slider">
+                <ul class="slides-front">
+                  <input type="radio" name="radio-btn" id="img-1" checked="">
+                  <li class="slide-container">
+                     <div class="slide">
+                       <img src="imagens/suplemax.webp">
+                     </div>
+                     <div class="nav">
+                        <label for="img-5" class="prev"></label>
+                        <label for="img-4" class="next"></label>
+                       <label for="img-3" class="prev"></label>
+                       <label for="img-2" class="next"></label>
+                     </div>
+                  </li>
+              
+                  <input type="radio" name="radio-btn" id="img-2">
+                  <li class="slide-container">
+                      <div class="slide">
+                        <img src="imagens/suplewhey.webp">
+                      </div>
+                  <div class="nav">
+                    <label for="img-1" class="prev">‹</label>
+                    <label for="img-3" class="next">›</label>
+                    <label for="img-4" class="prev">‹</label>
+                    <label for="img-5" class="next">›</label>
+                  </div>
+                  </li>
+              
+                  <input type="radio" name="radio-btn" id="img-3">
+                  <li class="slide-container">
+                      <div class="slide">
+                        <img src="imagens/vitac.webp">
+                      </div>
+                  <div class="nav">
+                    <label for="img-2" class="prev">‹</label>
+                    <label for="img-1" class="next">›</label>
+                    <label for="img-4" class="prev">‹</label>
+                    <label for="img-5" class="next">›</label>
+                  </div>
+                  </li>
+
+                  <input type="radio" name="radio-btn" id="img-4">
+                  <li class="slide-container">
+                      <div class="slide">
+                        <img src="imagens/suplewhey1.webp">
+                      </div>
+                  <div class="nav">
+                    <label for="img-5" class="prev">‹</label>
+                    <label for="img-3" class="next">›</label>
+                    <label for="img-2" class="prev">‹</label>
+                    <label for="img-1" class="next">›</label>
+                  </div>
+                  </li>
+
+                  <input type="radio" name="radio-btn" id="img-5">
+                  <li class="slide-container">
+                      <div class="slide">
+                        <img src="imagens/suplemax1.jpg">
+                      </div>
+                  <div class="nav">
+                    <label for="img-4" class="prev">‹</label>
+                    <label for="img-3" class="next">›</label>
+                    <label for="img-2" class="prev">‹</label>
+                    <label for="img-1" class="next">›</label>
+                  </div>
+                  </li>
+              
+                  <li class="nav-dots">
+                    <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                    <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                    <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                    <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+                    <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+                  </li>
+                </ul>
+              </div>
+              <script>$(document).ready(function(){
+   
+                var slids = $(".div-slider [type=radio]"); // busca os radios na div
+                var slids_len = slids.length; // conta o número de radios
+                var intervalo = 6; // intervalo em segundos
+                
+                function rodar(){
+                   var slids_ativo = $(".div-slider [type=radio]:checked")
+                   .attr("id")
+                   .match(/\d+/)[0]; // pega o valor numérico do id do radio checado
+             
+                   if(slids_ativo == slids_len) slids_ativo = 0; // se estiver no último slide, volta pro primeiro
+             
+                   slids.eq(slids_ativo).prop("checked", true); // checa o radio da vez
+                }
+                
+                var tempo = setInterval(rodar, intervalo*1000); // inicia o temporizador
+                
+                $(".div-slider").hover(
+                   function(){ // função quando entra o mouse
+                      clearInterval(tempo); // cancela o temporizador
+                   },
+                   function(){ // função quando retira o mouse
+                      tempo = setInterval(rodar, intervalo*1000); // reinicia o temporizador
+                   }
+                );
+                
+             }); </script>
+
+            <div class = "tempos">
+              <h2 >Oferta Termina em </h2>
+              <script src="scripts.js"></script>
+             <div id="timer"></div>     
+                      </div>
+
+
+             <div class="holder">
+
+              <div class="imagem" data-title="Suplemento BCA">
+                  <img src="imagens/bca.jpg"/>
+               </div>
+               
+                 <div class="imagem" data-title="Suplemento Whey">
+                  <img src="imagens/whey.jpg"/>
+               </div>
+          
+               <div class="imagem" data-title="Suplemento BCA">
+                  <img src="imagens/bca2.jpg"/>
+               </div>
+               <div class="imagem" data-title="Suplemento Whey">
+                  <img src="imagens/whey2.jpg"/>
+               </div>
+               <div class="imagem" data-title="Suplemento Whey">
+                  <img src="imagens/whey3.jpg"/>
+               </div>
+              </div>
+
+             <br />
+             <hr />             
+
+    <div class="conteudo"><h1>Brasil nutri shop oficial</h1>
+      <p><h2>Atuando a mais de 10 anos no mercado</h2></p>
+      <p> &#128175   A escolha certa para sua alimentação, possuimos de 4 milhões e produtos, isso mesmo você não leu errado, são mais de 4 milhões em produtos
+        de qualidade e eficiência. Trabalhamos de suplementos a vitaminas, tudo para que você possa cuidar melhor ainda de sua saúde e também desenvolver
+        mais aptidão física e mental. Confira nossos produtos, nossos clientes aprovam e recomendam.  &#128170
+      </p>
+    </div>
+<hr />
+<h2>Pesquisas em alta</h2>
+
+  <ul> 
+    <li><img src="imagens/vitB.jpg" alt="vitamina B"></li>
+  <li> <img src="imagens/Black.jpg" alt="black creatina"></li>
+  <li> <img src="imagens/vitD.jpg" alt="vitamina D"></li>
+  <li> <img src="imagens/VitMax.jpg" alt="vitamina MaxTitanium"></li>
+  <li> <img src="imagens/VitMaxD.jpg" alt="vitamina D MaxTitanium"></li>
+  <li> <img src="imagens/MaxCrea.png" alt="Max creatina"></li>
+  <li> <img src="imagens/dux.png" alt="Dux creatina"></li>
+  </ul>
+
+<footer>
+    <ol>Atendimento ao cliente
+    <li>Como comprar</li>
+    <li>Métodos de pagamento</li>
+    <li>Garantia nutri shop</li>
+    <li>Devolução e reembolso</li>
+    <li>Falar com a gente</li>
+    <li>Ouvidoria</li>
+  </ol>
+        <h4> &#169 Copyright Ads desenvolvimento 2020 - 2021</h4>
+</footer>
+</body>
+</html>

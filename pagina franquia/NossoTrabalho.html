@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>Brasil Nutri Shop</title>
+    <link rel="icon" type="image/jpg" href="imagens/logo.jpg">
+    <link rel="stylesheet" type ="text/css" href="estilos/estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+    
+        $('.barra-inicial .lista-redes').before(
+    
+          '<div class="rastreio-btn span1">'+ 
+            '<li class="rastreio-topo"><i class="fa fa-truck"></i>Rastreio de pedido</li>'+
+             '<div class="rastreio-content">'+
+              '<p>Digite o código de rastreio para acompanhar seu pedido</p>'+
+                '<input type="text" name="OrderTracking" id="OrderTracking" placeholder="Código">'+                
+                '<button type="submit" class="rastreio">RASTREAR PEDIDO</button>'+
+             '</div>'+
+          '</div>'
+        );
+        
+        $(".rastreio").click(
+                function() {
+                    var numerosro = document.getElementById('OrderTracking').value;
+                    window.open('http://rastreie.me/'+numerosro,'_blank');
+                }
+            );
+    
+        $('.rastreio-btn').hover( 
+        function () {
+            $('.rastreio-content').fadeIn(400).show();
+        },
+        
+        function(){
+            $('.rastreio-content').fadeOut(400).hide();
+        });
+        
+        </script>
+
+</body>
+</html>
